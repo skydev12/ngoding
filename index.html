@@ -15,55 +15,47 @@
             padding: 40px;
         }
 
-        .btn {
-            background: linear-gradient(to right, purple, pink);
-            padding: 15px 30px;
-            border-radius: 10px;
+        .card {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 15px;
             display: inline-block;
-            cursor: pointer;
-            margin-top: 20px;
+            box-shadow: 0 0 20px rgba(138,43,226,0.3);
         }
 
         img {
-            margin-top: 20px;
             border-radius: 12px;
-            max-width: 250px;
+            max-width: 280px;
+            margin-top: 15px;
+        }
+
+        .title {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #c084fc;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
 
-    <h1 style="font-size:40px;">KING SKY OFFC</h1>
+    <div class="title">KING SKY</div>
+    <div class="subtitle">OFFC</div>
 
-    <!-- Tombol -->
-    <div id="downloadBtn" class="btn">
-        DOWNLOAD PAYMENT
+    <div class="card">
+        <p>Scan QRIS untuk pembayaran</p>
+
+        <!-- 🔥 GANTI NAMA FILE KALO PERLU -->
+        <img src="payment.jpeg" alt="QRIS Payment">
+
+        <p style="margin-top:10px; font-size:14px; color:#ccc;">
+            Screenshot jika perlu
+        </p>
     </div>
-
-    <!-- Preview Image -->
-    <div>
-        <p>Preview Payment (kalau ga bisa download bisa SS)</p>
-        <img src="payment.jpeg" alt="payment">
-    </div>
-
-    <script>
-        document.getElementById('downloadBtn').addEventListener('click', function() {
-
-            // 🔥 GANTI INI DENGAN LINK GITHUB KAMU
-            const url = 'https://username.github.io/nama-repo/payment.jpeg';
-
-            // buka di tab baru
-            window.open(url, '_blank');
-
-            // paksa download
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = 'payment.jpeg';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        });
-    </script>
 
 </body>
 </html>
