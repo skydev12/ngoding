@@ -40,9 +40,30 @@
             margin-bottom: 20px;
         }
 
-        a {
-            color: #a78bfa;
-            text-decoration: underline;
+        .btn {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #7c3aed;
+        }
+
+        .btn-primary:hover {
+            background: #6d28d9;
+        }
+
+        .btn-secondary {
+            background: #374151;
+        }
+
+        .btn-secondary:hover {
+            background: #1f2937;
         }
     </style>
 </head>
@@ -63,6 +84,17 @@
         <p>suport saweria</p>
         <img src="image.png" alt="QRIS Payment">
         <p style="font-size: 13px; color:#ccc;">Bisa screenshot kalau perlu</p>
+
+        <!-- BUTTON SAWERIA -->
+        <div style="margin-top:15px;">
+            <a href="https://saweria.co/Ikybotmd" target="_blank" class="btn btn-primary">
+                Kunjungi Saweria
+            </a>
+
+            <button onclick="copyLink()" class="btn btn-secondary">
+                Salin Link
+            </button>
+        </div>
     </div>
 
     <!-- Channel WA -->
@@ -72,6 +104,15 @@
             Klik di sini
         </a>
     </div>
+
+    <script>
+        function copyLink() {
+            const link = "https://saweria.co/Ikybotmd";
+            navigator.clipboard.writeText(link).then(() => {
+                alert("Link berhasil disalin!");
+            });
+        }
+    </script>
 
 </body>
 </html>
