@@ -40,6 +40,11 @@
             margin-bottom: 20px;
         }
 
+        a {
+            color: #a78bfa;
+            text-decoration: underline;
+        }
+
         .btn {
             display: inline-block;
             margin: 5px;
@@ -65,6 +70,13 @@
         .btn-secondary:hover {
             background: #1f2937;
         }
+
+        .copy-msg {
+            font-size: 12px;
+            color: #4ade80;
+            margin-top: 5px;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -79,13 +91,20 @@
         <p><b>Discord:</b> iky0592</p>
     </div>
 
-    <!-- QRIS -->
+    <!-- QRIS + SAWERIA -->
     <div class="card">
         <p>suport saweria</p>
         <img src="image.png" alt="QRIS Payment">
         <p style="font-size: 13px; color:#ccc;">Bisa screenshot kalau perlu</p>
 
-        <!-- BUTTON SAWERIA -->
+        <!-- LINK DITAMPILKAN -->
+        <div style="margin-top:10px; word-break: break-all;">
+            <a href="https://saweria.co/Ikybotmd" target="_blank">
+                https://saweria.co/Ikybotmd
+            </a>
+        </div>
+
+        <!-- BUTTON -->
         <div style="margin-top:15px;">
             <a href="https://saweria.co/Ikybotmd" target="_blank" class="btn btn-primary">
                 Kunjungi Saweria
@@ -94,6 +113,8 @@
             <button onclick="copyLink()" class="btn btn-secondary">
                 Salin Link
             </button>
+
+            <div id="copyMsg" class="copy-msg">✔ Link berhasil disalin</div>
         </div>
     </div>
 
@@ -109,7 +130,12 @@
         function copyLink() {
             const link = "https://saweria.co/Ikybotmd";
             navigator.clipboard.writeText(link).then(() => {
-                alert("Link berhasil disalin!");
+                const msg = document.getElementById("copyMsg");
+                msg.style.display = "block";
+
+                setTimeout(() => {
+                    msg.style.display = "none";
+                }, 2000);
             });
         }
     </script>
